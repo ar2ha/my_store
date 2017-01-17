@@ -1,0 +1,37 @@
+<h1>Items</h1>
+
+<% if @items.empty? %>
+	<b>No items in store</b>
+<% else %>
+<table class="items">
+	<tr>
+		<th>item id</th>
+		<th>Name</th>
+		<th>Фото</th>
+		<th>Price</th>
+		<th>created_at</th>
+		<th></th>
+		<th>Рейтинг</th>
+	</tr>
+
+
+<% @items.each do |i| %>
+	<tr>
+		<td><%= i.id %></td>
+		<td><%= link_to i.name, item_path(i) %>
+	</td>
+		<td><%= image_tag i.image.url unless i.image.nil? %></td>
+		<td><%= i.price %> руб.</td>
+		<td><%= i.created_at %></td>
+		<td><%= link_to "Удалить", item_path(i), method: :delete, data: {confirm: "Точно удалить?"} %></td>
+		<td>|<%= i.votes_count %>| <%= link_to "+", upvote_item_path(i)%></td>
+	</tr>
+		
+<% end %>
+<% end %>
+
+</table>
+ 
+ <%= render partial: "/shared/email" %>
+
+

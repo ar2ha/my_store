@@ -1,0 +1,6 @@
+class Image < ActiveRecord::Base
+
+#attr_accessible :photo
+has_attched_file :photo
+belongs_to :item
+end

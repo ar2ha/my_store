@@ -1,0 +1,8 @@
+class CreateAddVotesCountToItems < ActiveRecord::Migration
+  def change
+    create_table :add_votes_count_to_items do |t|
+
+      t.timestamps
+    end
+  end
+end

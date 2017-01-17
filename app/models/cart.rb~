@@ -1,0 +1,6 @@
+class Cart < ActiveRecord::Base
+ 
+ has_many :positions
+ belongs_to :user
+ 
+end

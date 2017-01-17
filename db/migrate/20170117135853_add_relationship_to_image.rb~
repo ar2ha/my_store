@@ -1,0 +1,4 @@
+class AddRelationshipToImage < ActiveRecord::Migration
+  def change
+  end
+end
